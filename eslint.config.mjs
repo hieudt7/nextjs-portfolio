@@ -54,5 +54,34 @@ export default antfu({
     'node/prefer-global/process': 'off', // Allow using `process.env`
     'test/padding-around-all': 'error', // Add padding in test files
     'test/prefer-lowercase-title': 'off', // Allow using uppercase titles in test titles
+    'unicorn/custom-error-definition': 'error',
+    'unicorn/empty-brace-spaces': 'error',
+    'unicorn/no-array-for-each': 'off',
+    'unicorn/no-array-reduce': 'off',
+    'unicorn/no-console-spaces': 'error',
+    'unicorn/no-null': 'off',
+    'unicorn/filename-case': 'off',
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        replacements: {
+          db: false,
+          arg: false,
+          args: false,
+          env: false,
+          fn: false,
+          func: {
+            fn: true,
+            function: false,
+          },
+          prop: false,
+          props: false,
+          ref: false,
+          refs: false,
+        },
+        ignore: ['semVer', 'SemVer'],
+      },
+    ],
+    'jsx-a11y/anchor-is-valid': 'off',
   },
 });

@@ -5,7 +5,7 @@ export const BaseTemplate = (props: {
 }) => {
   return (
     <div className="w-full px-1 text-gray-700 antialiased">
-      <div className="mx-auto max-w-screen-lg">
+      <div className="container mx-auto">
         <header className="border-b border-gray-300">
           <div className="flex justify-between">
             <nav>

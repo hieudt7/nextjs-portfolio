@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
 };
 
-export function generateStaticParams() {
+export function generateStaticParameters() {
   return routing.locales.map(locale => ({ locale }));
 }
 
