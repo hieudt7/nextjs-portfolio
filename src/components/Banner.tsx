@@ -9,8 +9,8 @@ export default function Banner() {
       <section className="profile-summary py-[80px]" data-id="profile-summary">
         <div className="grid grid-flow-col grid-cols-2">
           <div>
-            <h4 className="summary-name">I am Gerold</h4>
-            <h3 className="summary-role">Web Developer + UX Designer</h3>
+            <h4 className="summary-name">I am Han</h4>
+            <h3 className="summary-role">Front End Developer</h3>
             <p className="summary-description"> break down complex user experience problems to create integrity focussed solutions that connect billions of people</p>
             <div className="flex items-center gap-6">
               <div>
