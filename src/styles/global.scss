@@ -1,7 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import Flaticon CSS - external CSS file */
 @import '~@flaticon/flaticon-uicons/css/regular/rounded';
+
+/* Import home styles - local SCSS file */
 @import './home.scss';
 
 /* HelveticaNeue Font Family */
@@ -73,6 +77,8 @@ img {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --tj-theme-primary: #8750f7;
+    --tj-theme-secondary: #2a1454;
   }
   .dark {
     --background: 0 0% 3.9%;

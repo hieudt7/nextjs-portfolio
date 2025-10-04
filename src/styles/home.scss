@@ -182,45 +182,99 @@
   }
 }
 .profile-quality-services {
+  background-color: #f6f3fc;
+  padding-top: 120px;
+  padding-bottom: 50px;
+
   .quality-services-list {
-    li {
+    li,
+    .quality-service-item {
       .number {
         font-size: 20px;
         font-weight: 700;
         line-height: 30px;
         color: #8750f7;
+        flex-shrink: 0;
+        min-width: 60px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .title {
         font-size: 36px;
         line-height: 36px;
         font-weight: 700;
         color: #8750f7;
+        flex: 1;
+        min-width: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .description {
         font-size: 16px;
         line-height: 24px;
         font-weight: 400;
         color: #2a1454;
+        flex: 1;
+        min-width: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .icon {
         color: #8750f7;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        flex-shrink: 0;
+        min-width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(0);
       }
-      &:hover {
-        background: linear-gradient(to right, #8750f7 0%, #2a1454 100%);
-        color: #fff;
+    }
+
+    // CSS cho component mới với gradient slide effect
+    .quality-service-item {
+      // Gradient overlay có z-index: 1, items có z-index: 2
+
+      // Item active (được set bởi JavaScript)
+      &.active {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(135, 80, 247, 0.3);
+
         .number {
           color: #fff;
+          transform: scale(1.1);
         }
         .title {
           color: #fff;
+          transform: translateX(5px);
         }
         .description {
           color: #fff;
+          opacity: 0.9;
         }
         .icon {
           color: #fff;
-          transform: rotate(-90deg);
+          transform: translateX(10px) rotate(-90deg) scale(1.2);
+        }
+      }
+
+      // Hover effect cho tất cả items
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(135, 80, 247, 0.3);
+
+        .number {
+          color: #fff;
+          transform: scale(1.1);
+        }
+        .title {
+          color: #fff;
+          transform: translateX(5px);
+        }
+        .description {
+          color: #fff;
+          opacity: 0.9;
+        }
+        .icon {
+          color: #fff;
+          transform: translateX(10px) rotate(-90deg) scale(1.2);
         }
       }
     }
