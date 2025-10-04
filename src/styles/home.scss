@@ -812,3 +812,150 @@
     }
   }
 }
+
+// Skills Styles - Gerold Light Style
+.profile-skills {
+  background-color: #f8f9fa;
+
+  .skills-container {
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+
+      .skill-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px 20px;
+        text-align: center;
+        border: 1px solid rgba(135, 80, 247, 0.1);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba(135, 80, 247, 0.15);
+          background: linear-gradient(135deg, #8750f7, #2a1454);
+
+          .skill-icon {
+            color: white;
+          }
+
+          .skill-percentage {
+            color: white;
+          }
+
+          .skill-name {
+            color: #8750f7;
+          }
+        }
+
+        .skill-icon {
+          font-size: 40px;
+          margin-bottom: 15px;
+          display: block;
+          color: #2a1454;
+          transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-percentage {
+          font-size: 24px;
+          font-weight: 700;
+          color: #2a1454;
+          margin-bottom: 10px;
+          display: block;
+          transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-name {
+          font-size: 16px;
+          font-weight: 600;
+          color: #8750f7;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 1024px) {
+    .skills-container {
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    .skills-container {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+
+        .skill-card {
+          padding: 24px 16px;
+
+          .skill-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+          }
+
+          .skill-percentage {
+            font-size: 20px;
+            margin-bottom: 8px;
+          }
+
+          .skill-name {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .skills-container {
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        .skill-card {
+          padding: 20px 16px;
+
+          .skill-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+          }
+
+          .skill-percentage {
+            font-size: 18px;
+            margin-bottom: 6px;
+          }
+
+          .skill-name {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Shimmer animation for progress bars
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
