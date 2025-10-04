@@ -1,42 +1,78 @@
 import * as React from 'react';
 
 export default function Header() {
+  const [isSticky, setIsSticky] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      // Header becomes sticky when scrolled past 50px
+      setIsSticky(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header>
-      <div className="w-full px-1 text-gray-700 antialiased">
-        <div className="mx-auto max-w-screen-lg">
-          <div className="border-b border-gray-300">
-            <div className="flex justify-between">
-              <div className="p-logo">
-                <h1>H</h1>
-                <a href="#">hieudtx9@gmail.com</a>
+    <header className={`site-header ${isSticky ? 'sticky-active' : ''}`}>
+      <div className="header-container">
+        <div className="header-content">
+          {/* Left Section - Logo + Email */}
+          <div className="header-left">
+            <div className="logo-section">
+              <div className="logo-icon">
+                <span className="logo-text">G</span>
               </div>
-              <nav>
-                <ul className="flex flex-wrap gap-x-5 text-xl">
-                  <li>
-                    <a href="#">Services</a>
-                  </li>
-                  <li>
-                    <a href="#">Services</a>
-                  </li>
-                  <li>
-                    <a href="#">Services</a>
-                  </li>
-                  <li>
-                    <a href="#">Services</a>
-                  </li>
-                  <li>
-                    <a href="#">Services</a>
-                  </li>
-                  <li>
-                    <a href="#">Services</a>
-                  </li>
-                  <li>
-                    <a className="btn-download" href="#">Resume</a>
-                  </li>
-                </ul>
-              </nav>
+              <div className="logo-email">
+                <a href="mailto:mail@gerolddesign.com" className="email-link">
+                  mail@gerolddesign.com
+                </a>
+              </div>
             </div>
+          </div>
+
+          {/* Center Section - Navigation */}
+          <nav className="header-nav">
+            <ul className="nav-list">
+              <li className="nav-item">
+                <a href="#services" className="nav-link">
+                  Services
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#works" className="nav-link">
+                  Works
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#resume" className="nav-link">
+                  Resume
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#skills" className="nav-link">
+                  Skills
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#testimonials" className="nav-link">
+                  Testimonials
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#contact" className="nav-link">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Right Section - CTA Button */}
+          <div className="header-right">
+            <a href="#contact" className="hire-button">
+              Hire me!
+            </a>
           </div>
         </div>
       </div>
