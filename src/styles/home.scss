@@ -959,3 +959,242 @@
     transform: translateX(100%);
   }
 }
+
+// Contact Styles - Gerold Style
+.profile-contact {
+  background-color: #2a1454; // Dark purple background
+  
+  .contact-container {
+    .contact-form-section {
+      .contact-title {
+        font-size: 48px;
+        font-weight: 700;
+        color: white;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+      
+      .contact-description {
+        font-size: 18px;
+        color: #d1d5db; // gray-300
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+      
+      .contact-form {
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+          
+          @media (min-width: 640px) {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        
+        .form-group {
+          margin-bottom: 24px;
+          
+          .form-label {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 8px;
+          }
+          
+          .form-input,
+          .form-textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 0;
+            font-size: 16px;
+            color: white;
+            transition: all 0.3s ease;
+            
+            &:focus {
+              outline: none;
+              border-bottom-color: #8750f7;
+            }
+            
+            &::placeholder {
+              color: rgba(255, 255, 255, 0.5);
+            }
+          }
+          
+          .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+          }
+        }
+        
+        .submit-button {
+          background: linear-gradient(135deg, #8750f7, #2a1454);
+          color: white;
+          border: none;
+          padding: 16px 32px;
+          font-size: 16px;
+          font-weight: 600;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          margin-top: 8px;
+          
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(135, 80, 247, 0.3);
+          }
+        }
+      }
+    }
+    
+    .contact-info-section {
+      .contact-intro {
+        font-size: 18px;
+        color: #d1d5db; // gray-300
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+      
+      .contact-details {
+        .contact-item {
+          display: block;
+          font-size: 16px;
+          color: white;
+          text-decoration: underline;
+          text-decoration-color: rgba(255, 255, 255, 0.3);
+          text-underline-offset: 4px;
+          margin-bottom: 16px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            color: #8750f7;
+            text-decoration-color: #8750f7;
+          }
+        }
+      }
+      
+      .social-links {
+        .social-icons {
+          display: flex;
+          gap: 16px;
+          
+          .social-icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            
+            &:hover {
+              border-color: #8750f7;
+              color: #8750f7;
+              transform: translateY(-2px);
+            }
+            
+            .icon {
+              font-size: 18px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 1024px) {
+    .contact-container {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    
+    .contact-container {
+      .contact-form-section {
+        .contact-title {
+          font-size: 36px;
+        }
+        
+        .contact-description {
+          font-size: 16px;
+        }
+        
+        .contact-form {
+          .form-group {
+            margin-bottom: 20px;
+            
+            .form-label {
+              font-size: 14px;
+            }
+            
+            .form-input,
+            .form-textarea {
+              font-size: 14px;
+              padding: 10px 0;
+            }
+          }
+          
+          .submit-button {
+            padding: 14px 28px;
+            font-size: 14px;
+          }
+        }
+      }
+      
+      .contact-info-section {
+        .contact-intro {
+          font-size: 16px;
+        }
+        
+        .contact-details {
+          .contact-item {
+            font-size: 14px;
+          }
+        }
+        
+        .social-links {
+          .social-icons {
+            .social-icon {
+              width: 44px;
+              height: 44px;
+              
+              .icon {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-container {
+      .contact-form-section {
+        .contact-title {
+          font-size: 28px;
+        }
+        
+        .contact-form {
+          .form-row {
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+    }
+  }
+}
