@@ -5,7 +5,7 @@ import Banner from '@/components/Banner';
 import Contact from '@/components/Contact';
 import EducationAndExperience from '@/components/EducationExperience';
 import QualityServices from '@/components/QualityServices';
-import RecentWorks from '@/components/RecentWorks';
+import RecentWorksSlider from '@/components/RecentWorksSlider';
 import Skills from '@/components/Skills';
 
 const HomePage = () => {
@@ -14,7 +14,7 @@ const HomePage = () => {
       <Banner />
       <Achievement />
       <QualityServices />
-      <RecentWorks />
+      <RecentWorksSlider />
       <EducationAndExperience />
       <Skills />
       <Contact />

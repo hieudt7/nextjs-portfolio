@@ -281,36 +281,105 @@
   }
 }
 .profile-recent-works {
+  position: relative;
   .filter-list {
     background-color: #f6f3fc;
     padding: 6px 8px;
     border-radius: 60px;
     li {
       padding: 12px 25px;
-      a {
+      a,
+      button {
         color: #8750f7;
+        background: none;
+        border: none;
+        font-size: inherit;
+        font-family: inherit;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        text-align: center;
       }
       &.active,
       &:hover {
         background: linear-gradient(to right, #8750f7 0%, #2a1454 100%);
         border-radius: 60px;
-        a {
+        a,
+        button {
           color: #fff;
         }
       }
     }
   }
   .recent-works-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    // Responsive: 1 column on mobile and tablet
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 0 15px;
+    }
+
     li {
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(135, 80, 247, 0.3);
+
+        .work-infor {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+
+        img {
+          transform: scale(1.05);
+        }
+
+        .work-infor .content {
+          h4 {
+            transform: translateY(-2px);
+          }
+          p {
+            transform: translateY(-1px);
+          }
+          .icon {
+            transform: translate(-5px, -50%) rotate(5deg);
+          }
+        }
+      }
+
       a {
         position: relative;
         display: block;
+
+        img {
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 15px;
+        }
         .work-infor {
           position: absolute;
           bottom: 0;
           left: 0;
           width: 100%;
           padding: 15px;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(20px);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           .content {
             background: linear-gradient(to right, #8750f7 0%, #2a1454 100%);
             padding: 20px;
@@ -322,6 +391,7 @@
               font-weight: 700;
               color: #fff;
               margin-bottom: 15px;
+              transition: all 0.3s ease;
             }
             p {
               font-size: 16px;
@@ -329,6 +399,7 @@
               font-weight: 400;
               color: #fff;
               margin-bottom: 0;
+              transition: all 0.3s ease;
             }
             .icon {
               position: absolute;
@@ -336,6 +407,7 @@
               top: 50%;
               transform: translate(0%, -50%);
               color: #fff;
+              transition: all 0.3s ease;
             }
           }
         }
@@ -343,6 +415,174 @@
     }
   }
 }
+
+// Swiper Slider Styles cho Recent Works
+.recent-works-swiper {
+  position: relative;
+  padding: 0 20px 60px;
+
+  .recent-work-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(135, 80, 247, 0.3);
+
+      .work-infor {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      img {
+        transform: scale(1.05);
+      }
+
+      .work-infor .content {
+        h4 {
+          transform: translateY(-2px);
+        }
+        p {
+          transform: translateY(-1px);
+        }
+        .icon {
+          transform: translate(-5px, -50%) rotate(5deg);
+        }
+      }
+    }
+
+    a {
+      position: relative;
+      display: block;
+
+      img {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 15px;
+      }
+      .work-infor {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .content {
+          background: linear-gradient(to right, #8750f7 0%, #2a1454 100%);
+          padding: 20px;
+          border-radius: 15px;
+          position: relative;
+          h4 {
+            font-size: 30px;
+            line-height: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+          }
+          p {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 0;
+            transition: all 0.3s ease;
+          }
+          .icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translate(0%, -50%);
+            color: #fff;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Custom Navigation Buttons
+.swiper-button-prev-custom,
+.swiper-button-next-custom,
+.swiper-button-prev-demo,
+.swiper-button-next-demo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to right, #8750f7 0%, #2a1454 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  color: white;
+  box-shadow: 0 4px 15px rgba(135, 80, 247, 0.3);
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(135, 80, 247, 0.4);
+  }
+
+  &:after {
+    display: none;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.swiper-button-prev-custom,
+.swiper-button-prev-demo {
+  left: 0;
+}
+
+.swiper-button-next-custom,
+.swiper-button-next-demo {
+  right: 0;
+}
+
+// Custom Pagination
+.swiper-pagination-custom,
+.swiper-pagination-demo {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  .swiper-pagination-bullet-custom,
+  .swiper-pagination-bullet-demo {
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.swiper-pagination-bullet-active-custom,
+    &.swiper-pagination-bullet-active-demo {
+      background: linear-gradient(to right, #8750f7 0%, #2a1454 100%);
+      transform: scale(1.2);
+    }
+
+    &:hover {
+      background: #8750f7;
+    }
+  }
+}
+
 .profile-education-experience {
   .work-education-timeline {
     margin-top: 50px;
