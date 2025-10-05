@@ -10,7 +10,7 @@ export default function QualityServices() {
 
   return (
     <>
-      <section className="profile-quality-services" data-id="profile-quality-services">
+      <section id="services" className="profile-quality-services" data-id="profile-quality-services">
         <div className="container mx-auto max-w-[1200px] px-4">
           <div className="page-info mx-auto mb-[50px] max-w-[660px]">
             <h2 className="page-title">

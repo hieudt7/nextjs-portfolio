@@ -25,7 +25,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="profile-contact pb-[90px] pt-[120px]" data-id="profile-contact">
+      <section id="contact" className="profile-contact pb-[90px] pt-[120px]" data-id="profile-contact">
         <div className="contact-container mx-auto max-w-[1200px] px-4">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Left Column - Contact Form */}

@@ -15,6 +15,22 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Smooth scroll function
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const headerHeight = 80; // Adjust based on your header height
+      const targetPosition = targetElement.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <header className={`site-header ${isSticky ? 'sticky-active' : ''}`}>
       <div className="header-container">
@@ -43,32 +59,56 @@ export default function Header() {
           <nav className="header-nav">
             <ul className="nav-list">
               <li className="nav-item">
-                <a href="#services" className="nav-link">
+                <a
+                  href="#services"
+                  className="nav-link"
+                  onClick={e => handleSmoothScroll(e, 'services')}
+                >
                   Services
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#works" className="nav-link">
+                <a
+                  href="#works"
+                  className="nav-link"
+                  onClick={e => handleSmoothScroll(e, 'works')}
+                >
                   Works
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#resume" className="nav-link">
+                <a
+                  href="#resume"
+                  className="nav-link"
+                  onClick={e => handleSmoothScroll(e, 'resume')}
+                >
                   Resume
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#skills" className="nav-link">
+                <a
+                  href="#skills"
+                  className="nav-link"
+                  onClick={e => handleSmoothScroll(e, 'skills')}
+                >
                   Skills
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#testimonials" className="nav-link">
+                <a
+                  href="#testimonials"
+                  className="nav-link"
+                  onClick={e => handleSmoothScroll(e, 'testimonials')}
+                >
                   Testimonials
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#contact" className="nav-link">
+                <a
+                  href="#contact"
+                  className="nav-link"
+                  onClick={e => handleSmoothScroll(e, 'contact')}
+                >
                   Contact
                 </a>
               </li>
@@ -77,7 +117,11 @@ export default function Header() {
 
           {/* Right Section - CTA Button */}
           <div className="header-right">
-            <a href="#contact" className="hire-button">
+            <a
+              href="#contact"
+              className="hire-button"
+              onClick={e => handleSmoothScroll(e, 'contact')}
+            >
               Hire me!
             </a>
           </div>

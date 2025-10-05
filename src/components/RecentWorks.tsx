@@ -32,7 +32,7 @@ export default function RecentWorks() {
             </span>
           </h2>
         </div>
-        <ul className="filter-list m-auto flex w-fit">
+        <ul className="filter-list m-auto mb-[45px] flex w-fit">
           {workCategories.map(category => (
             <li key={category} className={activeCategory === category ? 'active' : ''}>
               <button
