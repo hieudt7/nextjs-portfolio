@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import * as React from 'react';
 
 export default function Header() {
@@ -22,11 +23,17 @@ export default function Header() {
           <div className="header-left">
             <div className="logo-section">
               <div className="logo-icon">
-                <span className="logo-text">G</span>
+                <Image
+                  src="/assets/images/web_logo.png"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="logo-image"
+                />
               </div>
               <div className="logo-email">
-                <a href="mailto:mail@gerolddesign.com" className="email-link">
-                  mail@gerolddesign.com
+                <a href="mailto:hieudtx9@gmail.com" className="email-link">
+                  hieudtx9@gmail.com
                 </a>
               </div>
             </div>

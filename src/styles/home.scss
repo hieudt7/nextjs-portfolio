@@ -1251,31 +1251,10 @@
       gap: 16px;
       
       .logo-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #8750f7, #2a1454);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        
-        &::before {
-          content: '';
-          position: absolute;
-          width: 40px;
-          height: 40px;
-          border: 3px solid white;
-          border-radius: 50%;
-          border-top-color: transparent;
-          border-right-color: transparent;
-        }
-        
-        .logo-text {
-          font-size: 24px;
-          font-weight: 700;
-          color: white;
-          font-family: 'HelveticaNeue', sans-serif;
+        .logo-image {
+          width: 60px;
+          height: 60px;
+          object-fit: contain;
         }
       }
       
@@ -1420,11 +1399,9 @@
           gap: 12px;
           
           .logo-icon {
-            width: 50px;
-            height: 50px;
-            
-            .logo-text {
-              font-size: 20px;
+            .logo-image {
+              width: 50px;
+              height: 50px;
             }
           }
           
@@ -1460,11 +1437,9 @@
           gap: 8px;
           
           .logo-icon {
-            width: 45px;
-            height: 45px;
-            
-            .logo-text {
-              font-size: 18px;
+            .logo-image {
+              width: 40px;
+              height: 40px;
             }
           }
           
