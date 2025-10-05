@@ -7,7 +7,8 @@ export default function Banner() {
   return (
     <>
       <section className="profile-summary py-[80px]" data-id="profile-summary">
-        <div className="grid grid-flow-col grid-cols-2">
+        <div className="container mx-auto max-w-[1200px] px-4">
+          <div className="grid grid-flow-col grid-cols-2">
           <div>
             <h4 className="summary-name">I am Han</h4>
             <h3 className="summary-role">Front End Developer</h3>
@@ -40,6 +41,7 @@ export default function Banner() {
               <Image src={heroImg} alt="profile" />
             </div>
           </div>
+        </div>
         </div>
         <div className="hi-text-animation">
           <span>

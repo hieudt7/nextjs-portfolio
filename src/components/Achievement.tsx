@@ -4,7 +4,8 @@ export default function Achievement() {
   return (
     <>
       <section className="profile-achievement" data-id="profile-achievement">
-        <ul className="list-achievenment flex justify-between gap-[25px]">
+        <div className="container mx-auto max-w-[1200px] px-4">
+          <ul className="list-achievenment flex justify-between gap-[25px]">
           <li>
             <i className="fi fi-rr-trophy-star"></i>
             <span>14%</span>
@@ -26,6 +27,7 @@ export default function Achievement() {
             <p>Happy Clients</p>
           </li>
         </ul>
+        </div>
       </section>
     </>
   );

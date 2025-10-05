@@ -24,10 +24,10 @@ export default function Header() {
             <div className="logo-section">
               <div className="logo-icon">
                 <Image
-                  src="/assets/images/web_logo.png"
+                  src="/assets/images/logo_H_transparent.png"
                   alt="Logo"
-                  width={100}
-                  height={100}
+                  width={40}
+                  height={40}
                   className="logo-image"
                 />
               </div>

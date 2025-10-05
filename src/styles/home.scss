@@ -963,7 +963,7 @@
 // Contact Styles - Gerold Style
 .profile-contact {
   background-color: #2a1454; // Dark purple background
-  
+
   .contact-container {
     .contact-form-section {
       .contact-title {
@@ -973,28 +973,28 @@
         line-height: 1.2;
         margin-bottom: 24px;
       }
-      
+
       .contact-description {
         font-size: 18px;
         color: #d1d5db; // gray-300
         line-height: 1.6;
         margin-bottom: 32px;
       }
-      
+
       .contact-form {
         .form-row {
           display: grid;
           grid-template-columns: 1fr;
           gap: 24px;
-          
+
           @media (min-width: 640px) {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-        
+
         .form-group {
           margin-bottom: 24px;
-          
+
           .form-label {
             display: block;
             font-size: 16px;
@@ -1002,7 +1002,7 @@
             color: white;
             margin-bottom: 8px;
           }
-          
+
           .form-input,
           .form-textarea {
             width: 100%;
@@ -1013,23 +1013,23 @@
             font-size: 16px;
             color: white;
             transition: all 0.3s ease;
-            
+
             &:focus {
               outline: none;
               border-bottom-color: #8750f7;
             }
-            
+
             &::placeholder {
               color: rgba(255, 255, 255, 0.5);
             }
           }
-          
+
           .form-textarea {
             resize: vertical;
             min-height: 120px;
           }
         }
-        
+
         .submit-button {
           background: linear-gradient(135deg, #8750f7, #2a1454);
           color: white;
@@ -1041,7 +1041,7 @@
           cursor: pointer;
           transition: all 0.3s ease;
           margin-top: 8px;
-          
+
           &:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(135, 80, 247, 0.3);
@@ -1049,7 +1049,7 @@
         }
       }
     }
-    
+
     .contact-info-section {
       .contact-intro {
         font-size: 18px;
@@ -1057,7 +1057,7 @@
         line-height: 1.6;
         margin-bottom: 32px;
       }
-      
+
       .contact-details {
         .contact-item {
           display: block;
@@ -1068,19 +1068,19 @@
           text-underline-offset: 4px;
           margin-bottom: 16px;
           transition: all 0.3s ease;
-          
+
           &:hover {
             color: #8750f7;
             text-decoration-color: #8750f7;
           }
         }
       }
-      
+
       .social-links {
         .social-icons {
           display: flex;
           gap: 16px;
-          
+
           .social-icon {
             width: 48px;
             height: 48px;
@@ -1092,13 +1092,13 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            
+
             &:hover {
               border-color: #8750f7;
               color: #8750f7;
               transform: translateY(-2px);
             }
-            
+
             .icon {
               font-size: 18px;
               font-weight: 600;
@@ -1108,7 +1108,7 @@
       }
     }
   }
-  
+
   // Responsive adjustments
   @media (max-width: 1024px) {
     .contact-container {
@@ -1118,60 +1118,60 @@
       }
     }
   }
-  
+
   @media (max-width: 768px) {
     padding-top: 80px;
     padding-bottom: 60px;
-    
+
     .contact-container {
       .contact-form-section {
         .contact-title {
           font-size: 36px;
         }
-        
+
         .contact-description {
           font-size: 16px;
         }
-        
+
         .contact-form {
           .form-group {
             margin-bottom: 20px;
-            
+
             .form-label {
               font-size: 14px;
             }
-            
+
             .form-input,
             .form-textarea {
               font-size: 14px;
               padding: 10px 0;
             }
           }
-          
+
           .submit-button {
             padding: 14px 28px;
             font-size: 14px;
           }
         }
       }
-      
+
       .contact-info-section {
         .contact-intro {
           font-size: 16px;
         }
-        
+
         .contact-details {
           .contact-item {
             font-size: 14px;
           }
         }
-        
+
         .social-links {
           .social-icons {
             .social-icon {
               width: 44px;
               height: 44px;
-              
+
               .icon {
                 font-size: 16px;
               }
@@ -1181,14 +1181,14 @@
       }
     }
   }
-  
+
   @media (max-width: 480px) {
     .contact-container {
       .contact-form-section {
         .contact-title {
           font-size: 28px;
         }
-        
+
         .contact-form {
           .form-row {
             grid-template-columns: 1fr;
@@ -1209,13 +1209,13 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  
+
   // Add shadow when sticky
   &.sticky-active {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.95);
   }
-  
+
   // Gradient background overlay on the right side
   &::after {
     content: '';
@@ -1227,37 +1227,37 @@
     background: linear-gradient(90deg, transparent 0%, rgba(135, 80, 247, 0.1) 100%);
     pointer-events: none;
   }
-  
+
   .header-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
-  
+
   .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
   }
-  
+
   // Left Section - Logo + Email
   .header-left {
     flex: 0 0 auto;
-    
+
     .logo-section {
       display: flex;
       align-items: center;
       gap: 16px;
-      
+
       .logo-icon {
         .logo-image {
-          width: 60px;
-          height: 60px;
+          width: 40px;
+          height: 40px;
           object-fit: contain;
         }
       }
-      
+
       .logo-email {
         .email-link {
           font-size: 16px;
@@ -1265,7 +1265,7 @@
           text-decoration: none;
           font-weight: 500;
           transition: color 0.3s ease;
-          
+
           &:hover {
             color: #8750f7;
           }
@@ -1273,13 +1273,13 @@
       }
     }
   }
-  
+
   // Center Section - Navigation
   .header-nav {
     flex: 1;
     display: flex;
     justify-content: center;
-    
+
     .nav-list {
       display: flex;
       align-items: center;
@@ -1287,7 +1287,7 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      
+
       .nav-item {
         .nav-link {
           font-size: 16px;
@@ -1296,11 +1296,11 @@
           font-weight: 500;
           position: relative;
           transition: color 0.3s ease;
-          
+
           &:hover {
             color: #8750f7;
           }
-          
+
           &::after {
             content: '';
             position: absolute;
@@ -1311,7 +1311,7 @@
             background: #8750f7;
             transition: width 0.3s ease;
           }
-          
+
           &:hover::after {
             width: 100%;
           }
@@ -1319,11 +1319,11 @@
       }
     }
   }
-  
+
   // Right Section - CTA Button
   .header-right {
     flex: 0 0 auto;
-    
+
     .hire-button {
       display: inline-block;
       background: linear-gradient(135deg, #8750f7, #2a1454);
@@ -1335,14 +1335,14 @@
       font-size: 16px;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(135, 80, 247, 0.2);
-      
+
       &:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(135, 80, 247, 0.3);
       }
     }
   }
-  
+
   // Mobile Menu Toggle (for responsive)
   .mobile-menu-toggle {
     display: none;
@@ -1352,7 +1352,7 @@
     border: none;
     cursor: pointer;
     padding: 8px;
-    
+
     span {
       width: 25px;
       height: 3px;
@@ -1361,14 +1361,14 @@
       transition: all 0.3s ease;
     }
   }
-  
+
   // Responsive Design
   @media (max-width: 1024px) {
     .header-content {
       .header-nav {
         .nav-list {
           gap: 24px;
-          
+
           .nav-item {
             .nav-link {
               font-size: 14px;
@@ -1376,7 +1376,7 @@
           }
         }
       }
-      
+
       .header-right {
         .hire-button {
           padding: 10px 20px;
@@ -1385,26 +1385,26 @@
       }
     }
   }
-  
+
   @media (max-width: 768px) {
     padding: 15px 0;
-    
+
     .header-container {
       padding: 0 15px;
     }
-    
+
     .header-content {
       .header-left {
         .logo-section {
           gap: 12px;
-          
+
           .logo-icon {
             .logo-image {
-              width: 50px;
-              height: 50px;
+              width: 36px;
+              height: 36px;
             }
           }
-          
+
           .logo-email {
             .email-link {
               font-size: 14px;
@@ -1412,11 +1412,11 @@
           }
         }
       }
-      
+
       .header-nav {
         display: none; // Hide navigation on mobile, can be replaced with hamburger menu
       }
-      
+
       .header-right {
         .hire-button {
           padding: 8px 16px;
@@ -1424,25 +1424,25 @@
         }
       }
     }
-    
+
     .mobile-menu-toggle {
       display: flex;
     }
   }
-  
+
   @media (max-width: 480px) {
     .header-content {
       .header-left {
         .logo-section {
           gap: 8px;
-          
+
           .logo-icon {
             .logo-image {
-              width: 40px;
-              height: 40px;
+              width: 32px;
+              height: 32px;
             }
           }
-          
+
           .logo-email {
             .email-link {
               font-size: 12px;
@@ -1450,7 +1450,7 @@
           }
         }
       }
-      
+
       .header-right {
         .hire-button {
           padding: 6px 12px;

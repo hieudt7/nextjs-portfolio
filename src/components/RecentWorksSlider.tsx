@@ -35,15 +35,16 @@ export default function RecentWorksSlider() {
   return (
     <>
       <section className="profile-recent-works pb-[90px] pt-[120px]" data-id="profile-recent-works">
-        <div className="page-info mx-auto mb-[50px] max-w-[660px]">
-          <h2 className="page-title">
-            <span>
-              My Recent Works
-            </span>
-          </h2>
-        </div>
+        <div className="container mx-auto max-w-[1200px] px-4">
+          <div className="page-info mx-auto mb-[50px] max-w-[660px]">
+            <h2 className="page-title">
+              <span>
+                My Recent Works
+              </span>
+            </h2>
+          </div>
 
-        <ul className="filter-list m-auto flex w-fit">
+          <ul className="filter-list m-auto flex w-fit">
           {workCategories.map(category => (
             <li key={category} className={activeCategory === category ? 'active' : ''}>
               <button
@@ -146,6 +147,7 @@ export default function RecentWorksSlider() {
                 </div>
               </div>
             )}
+        </div>
       </section>
     </>
   );

@@ -5,15 +5,16 @@ export default function EducationAndExperience() {
   return (
     <>
       <section className="profile-education-experience pb-[90px] pt-[120px]" data-id="profile-education-experience">
-        <div className="page-info mx-auto mb-[50px] max-w-[660px]">
-          <h2 className="page-title">
-            <span>
-              Education & Work Experience
-            </span>
-          </h2>
-        </div>
+        <div className="container mx-auto max-w-[1200px] px-4">
+          <div className="page-info mx-auto mb-[50px] max-w-[660px]">
+            <h2 className="page-title">
+              <span>
+                Education & Work Experience
+              </span>
+            </h2>
+          </div>
 
-        <div className="work-education-timeline mx-auto max-w-[1200px] px-4">
+          <div className="work-education-timeline">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {/* EDUCATION COLUMN */}
             <div className="education-column">
@@ -87,6 +88,7 @@ export default function EducationAndExperience() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </>
