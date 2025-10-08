@@ -1,7 +1,7 @@
 import { BrandFacebook, BrandGithub, BrandLinkedin, Download } from '@mynaui/icons-react';
 import Image from 'next/image';
 import * as React from 'react';
-import heroImg from '/public/assets/images/hero_img_1.webp';
+import heroImg from '/public/assets/images/hero_img_2.png';
 
 export default function Banner() {
   return (

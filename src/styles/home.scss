@@ -1463,3 +1463,440 @@
 
 // Note: With sticky positioning, no body padding is needed
 // The header will stick to the top when scrolling but won't overlap content initially
+
+// Game Character Animations
+.game-character {
+  padding-top: 80px;
+
+  // Background particles animation
+  .animate-float {
+    animation: float linear infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  // Fire image animations
+  .fire-wave-animation {
+    animation: fireWaveImage 3s ease-in-out infinite;
+  }
+
+  .fire-fade-animation {
+    animation: fireFade 1.5s ease-in-out infinite;
+  }
+}
+
+// Keyframes for game character
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fireWaveImage {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes fireFade {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// Ultimate Skill Card Custom Shape
+.ultimate-skill-card {
+  position: relative;
+  width: 240px;
+  height: 320px;
+  background: linear-gradient(135deg, #1a0a0a 0%, #2d1b1b 50%, #3d2828 100%);
+  border-radius: 0;
+
+  // Custom clipped shape with angled cuts
+  clip-path: polygon(
+    0% 0%,
+    // Top-left corner
+    85% 0%,
+    // Top-right with cut
+    100% 15%,
+    // Right side cut
+    100% 100%,
+    // Bottom-right corner
+    15% 100%,
+    // Bottom-left with cut
+    0% 85% // Left side cut
+  );
+
+  // Add inner glow effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 140, 0, 0.1) 0%,
+      rgba(255, 69, 0, 0.2) 50%,
+      rgba(220, 20, 60, 0.1) 100%
+    );
+    clip-path: polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 15% 100%, 0% 85%);
+    z-index: 1;
+  }
+
+  // Content container
+  .card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .image-section {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        transition: transform 0.3s ease;
+      }
+
+      // Play button overlay
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 1);
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+          fill: #333;
+          margin-left: 3px; // Slight offset for play icon
+        }
+      }
+    }
+
+    .info-section {
+      background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+      padding: 16px;
+      min-height: 120px;
+      position: relative;
+
+      .skill-name {
+        font-size: 24px;
+        font-weight: 900;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 4px;
+      }
+
+      .skill-type {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+      }
+
+      .skill-bonus {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+
+        .bonus-icon {
+          width: 16px;
+          height: 16px;
+          fill: white;
+        }
+      }
+    }
+  }
+
+  // Hover effects - only scale image
+  &:hover {
+    .image-section img {
+      transform: scale(1.05);
+    }
+
+    &::before {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 140, 0, 0.2) 0%,
+        rgba(255, 69, 0, 0.3) 50%,
+        rgba(220, 20, 60, 0.2) 100%
+      );
+    }
+  }
+}
+
+// Tomioka Ultimate Skill Card Variant
+.ultimate-skill-card.tomioka {
+  background: linear-gradient(135deg, #1e3a8a 0%, #155e75 100%);
+
+  &::before {
+    background: linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.1) 0%,
+      rgba(59, 130, 246, 0.2) 50%,
+      rgba(14, 165, 233, 0.1) 100%
+    );
+  }
+
+  .info-section {
+    background: linear-gradient(135deg, #1e40af 0%, #0f172a 100%);
+  }
+}
+
+.ultimate-skill-card.shinazugawa {
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+
+  &::before {
+    background: linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.1) 0%,
+      rgba(16, 185, 129, 0.2) 50%,
+      rgba(5, 150, 105, 0.1) 100%
+    );
+  }
+
+  .info-section {
+    background: linear-gradient(135deg, #047857 0%, #064e3b 100%);
+  }
+}
+
+// Water Ring Animation for Tomioka
+.water-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation: waterRing 2s ease-out infinite;
+  top: 60%; // Position rings at character's feet
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; // Lower than character (z-10)
+
+  &.ring-1 {
+    width: 120px;
+    height: 120px;
+    border-color: rgba(34, 211, 238, 0.6);
+    animation-delay: 0s;
+  }
+
+  &.ring-2 {
+    width: 180px;
+    height: 180px;
+    border-color: rgba(59, 130, 246, 0.4);
+    animation-delay: 0.5s;
+  }
+
+  &.ring-3 {
+    width: 240px;
+    height: 240px;
+    border-color: rgba(14, 165, 233, 0.3);
+    animation-delay: 1s;
+  }
+}
+
+@keyframes waterRing {
+  0% {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+// Wind Ring Animation for Shinazugawa
+.wind-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation: windRing 2s ease-out infinite;
+  top: 60%; // Position rings at character's feet
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; // Lower than character (z-10)
+
+  &.ring-1 {
+    width: 120px;
+    height: 120px;
+    border-color: rgba(34, 197, 94, 0.6);
+    animation-delay: 0s;
+  }
+
+  &.ring-2 {
+    width: 180px;
+    height: 180px;
+    border-color: rgba(16, 185, 129, 0.4);
+    animation-delay: 0.5s;
+  }
+
+  &.ring-3 {
+    width: 240px;
+    height: 240px;
+    border-color: rgba(5, 150, 105, 0.3);
+    animation-delay: 1s;
+  }
+}
+
+@keyframes windRing {
+  0% {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+// Falling Leaves Animation for Shinazugawa
+.falling-leaf {
+  position: absolute;
+  top: -20px;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+  border-radius: 50% 0 50% 0;
+  opacity: 0;
+  animation: fallingLeaf 8s linear infinite;
+  transform-origin: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 8px;
+    background: #059669;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+@keyframes fallingLeaf {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(100px) rotate(180deg);
+    opacity: 0.8;
+  }
+  95% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+// Falling Snow Animation for Tomioka
+.falling-snow {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #fff 0%, #e0f2fe 50%, rgba(255, 255, 255, 0.6) 100%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: fallingSnow 8s linear infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes fallingSnow {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(-30px) rotate(180deg);
+    opacity: 0.9;
+  }
+  95% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(100vh) translateX(30px) rotate(360deg);
+    opacity: 0;
+  }
+}

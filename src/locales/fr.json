@@ -71,5 +71,13 @@
     "dashboard_link": "Tableau de bord",
     "user_profile_link": "Gérer votre compte",
     "sign_out": "Se déconnecter"
+  },
+  "Cosmetic": {
+    "meta_title": "Cosmétique",
+    "meta_description": "Parcourez notre boutique de cosmétiques et découvrez des produits de beauté incroyables."
+  },
+  "Game": {
+    "meta_title": "Jeu",
+    "meta_description": "Jouez à des jeux incroyables et amusez-vous."
   }
 }
