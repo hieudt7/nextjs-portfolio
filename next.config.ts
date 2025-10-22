@@ -19,6 +19,7 @@ export default (phase: string) => {
       },
       poweredByHeader: false,
       reactStrictMode: true,
+      trailingSlash: false,
       images: {
         unoptimized: true,
       },
