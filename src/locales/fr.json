@@ -107,5 +107,11 @@
   "Bombon": {
     "meta_title": "Bombon",
     "meta_description": "Explorez les douceurs et délices Bombon."
+  },
+  "Garena": {
+    "meta_title": "Jeu Garena",
+    "meta_description": "Jouez aux jeux Garena en ligne",
+    "title": "Jeu Garena",
+    "description": "Jouez aux jeux Garena en ligne"
   }
 }
