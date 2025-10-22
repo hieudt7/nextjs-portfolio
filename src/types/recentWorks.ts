@@ -1,6 +1,6 @@
 import { ArrowLongDownRight } from '@mynaui/icons-react';
 
-export type WorkCategory = 'All' | 'Web Design' | 'Web Development' | 'UI/UX Design' | '3D Design';
+export type WorkCategory = 'All' | 'Web Development' | 'Web Design' | 'UI/UX Design' | '3D Developer';
 
 export type RecentWork = {
   id: number;
@@ -14,10 +14,10 @@ export type RecentWork = {
 
 export const workCategories: WorkCategory[] = [
   'All',
-  'Web Design',
   'Web Development',
+  'Web Design',
   'UI/UX Design',
-  '3D Design',
+  '3D Developer',
 ];
 
 export const recentWorksData: RecentWork[] = [
@@ -62,7 +62,7 @@ export const recentWorksData: RecentWork[] = [
     title: '3D Product Visualization',
     description: 'Interactive 3D product showcase using Three.js for enhanced customer experience',
     image: '/assets/category/future.png',
-    category: '3D Design',
+    category: '3D Developer',
     link: '/future',
     icon: ArrowLongDownRight,
   },

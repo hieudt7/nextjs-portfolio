@@ -22,10 +22,10 @@ export const useWorkFilter = (searchResults?: RecentWork[]) => {
   const categoryCounts = useMemo(() => {
     const counts: Record<WorkCategory, number> = {
       'All': worksToFilter.length,
-      'Web Design': 0,
       'Web Development': 0,
+      'Web Design': 0,
       'UI/UX Design': 0,
-      '3D Design': 0,
+      '3D Developer': 0,
     };
 
     worksToFilter.forEach((work) => {
