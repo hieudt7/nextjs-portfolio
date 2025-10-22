@@ -16,8 +16,8 @@ export default function Header() {
   }, []);
 
   // Smooth scroll function
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
+  const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    event.preventDefault();
 
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
@@ -62,7 +62,7 @@ export default function Header() {
                 <a
                   href="#services"
                   className="nav-link"
-                  onClick={e => handleSmoothScroll(e, 'services')}
+                  onClick={event => handleSmoothScroll(event, 'services')}
                 >
                   Services
                 </a>
@@ -71,7 +71,7 @@ export default function Header() {
                 <a
                   href="#works"
                   className="nav-link"
-                  onClick={e => handleSmoothScroll(e, 'works')}
+                  onClick={event => handleSmoothScroll(event, 'works')}
                 >
                   Works
                 </a>
@@ -80,7 +80,7 @@ export default function Header() {
                 <a
                   href="#resume"
                   className="nav-link"
-                  onClick={e => handleSmoothScroll(e, 'resume')}
+                  onClick={event => handleSmoothScroll(event, 'resume')}
                 >
                   Resume
                 </a>
@@ -89,7 +89,7 @@ export default function Header() {
                 <a
                   href="#skills"
                   className="nav-link"
-                  onClick={e => handleSmoothScroll(e, 'skills')}
+                  onClick={event => handleSmoothScroll(event, 'skills')}
                 >
                   Skills
                 </a>
@@ -98,7 +98,7 @@ export default function Header() {
                 <a
                   href="#testimonials"
                   className="nav-link"
-                  onClick={e => handleSmoothScroll(e, 'testimonials')}
+                  onClick={event => handleSmoothScroll(event, 'testimonials')}
                 >
                   Testimonials
                 </a>
@@ -107,7 +107,7 @@ export default function Header() {
                 <a
                   href="#contact"
                   className="nav-link"
-                  onClick={e => handleSmoothScroll(e, 'contact')}
+                  onClick={event => handleSmoothScroll(event, 'contact')}
                 >
                   Contact
                 </a>
@@ -120,7 +120,7 @@ export default function Header() {
             <a
               href="#contact"
               className="hire-button"
-              onClick={e => handleSmoothScroll(e, 'contact')}
+              onClick={event => handleSmoothScroll(event, 'contact')}
             >
               Hire me!
             </a>

@@ -1,52 +1,52 @@
-import React from 'react';
 import { cn } from '@/libs/utils';
+import React from 'react';
 
-export interface IconProps {
+export type IconProps = {
   /**
    * Tên icon (không bao gồm prefix)
    * Ví dụ: 'user', 'heart', 'star'
    */
-  name: string;
-  
+  'name': string;
+
   /**
    * Style của icon
    * @default 'rr' (regular rounded)
    */
-  variant?: 'rr' | 'rs' | 'br' | 'bs' | 'sr' | 'ss' | 'tr' | 'ts' | 'brands';
-  
+  'variant'?: 'rr' | 'rs' | 'br' | 'bs' | 'sr' | 'ss' | 'tr' | 'ts' | 'brands';
+
   /**
    * Kích thước của icon
    * @default 'base'
    */
-  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
-  
+  'size'?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+
   /**
    * Màu sắc của icon
    */
-  color?: string;
-  
+  'color'?: string;
+
   /**
    * CSS classes bổ sung
    */
-  className?: string;
-  
+  'className'?: string;
+
   /**
    * Click handler
    */
-  onClick?: () => void;
-  
+  'onClick'?: () => void;
+
   /**
    * Accessibility label
    */
   'aria-label'?: string;
-}
+};
 
 const sizeClasses = {
-  xs: 'text-xs',
-  sm: 'text-sm', 
-  base: 'text-base',
-  lg: 'text-lg',
-  xl: 'text-xl',
+  'xs': 'text-xs',
+  'sm': 'text-sm',
+  'base': 'text-base',
+  'lg': 'text-lg',
+  'xl': 'text-xl',
   '2xl': 'text-2xl',
   '3xl': 'text-3xl',
   '4xl': 'text-4xl',
@@ -54,7 +54,7 @@ const sizeClasses = {
 
 /**
  * Component Icon sử dụng Flaticon UIcons
- * 
+ *
  * @example
  * ```tsx
  * <Icon name="user" />
@@ -74,7 +74,7 @@ const Icon: React.FC<IconProps> = ({
 }) => {
   const iconClass = `fi fi-${variant}-${name}`;
   const sizeClass = sizeClasses[size];
-  
+
   return (
     <i
       className={cn(
@@ -82,18 +82,20 @@ const Icon: React.FC<IconProps> = ({
         sizeClass,
         color,
         onClick && 'cursor-pointer',
-        className
+        className,
       )}
       onClick={onClick}
       aria-label={ariaLabel}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
-      onKeyDown={onClick ? (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          onClick();
-        }
-      } : undefined}
+      onKeyDown={onClick
+        ? (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              onClick();
+            }
+          }
+        : undefined}
       {...props}
     />
   );

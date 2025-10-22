@@ -18,10 +18,6 @@ const GamePage = () => {
     return null;
   }
 
-  const _nextCharacter = () => {
-    setCurrentIndex(previous => (previous + 1) % characters.length);
-  };
-
   const previousCharacter = () => {
     setCurrentIndex(
       previous => (previous - 1 + characters.length) % characters.length,

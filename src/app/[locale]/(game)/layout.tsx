@@ -14,4 +14,3 @@ export default async function GameLayout(props: {
     </div>
   );
 }
-

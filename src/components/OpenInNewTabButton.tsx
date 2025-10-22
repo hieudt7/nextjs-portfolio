@@ -20,8 +20,8 @@ const OpenInNewTabButton = () => {
   // Get URL based on current pathname
   const getUrlForRoute = () => {
     // Remove locale prefix if present (e.g., /fr/cosmetic -> /cosmetic)
-    const cleanPath = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/');
-    return routeToUrl[cleanPath] || routeToUrl[pathname];
+    const cleanPath = pathname?.replace(/^\/[a-z]{2}(\/|$)/, '/');
+    return routeToUrl[cleanPath || ''] || routeToUrl[pathname || ''];
   };
 
   const handleOpenInNewTab = () => {
@@ -64,4 +64,3 @@ const OpenInNewTabButton = () => {
 };
 
 export default OpenInNewTabButton;
-

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-interface MousePosition {
+type MousePosition = {
   x: number;
   y: number;
-}
+};
 
 /**
  * Hook để track mouse position
@@ -12,8 +12,8 @@ export const useMousePosition = () => {
   const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const updateMousePosition = (event: MouseEvent) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
     };
 
     window.addEventListener('mousemove', updateMousePosition);

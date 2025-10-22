@@ -1,6 +1,6 @@
-import { setRequestLocale } from 'next-intl/server';
 import BackToHomeButton from '@/components/BackToHomeButton';
 import OpenInNewTabButton from '@/components/OpenInNewTabButton';
+import { setRequestLocale } from 'next-intl/server';
 
 export default async function CosmeticLayout(props: {
   children: React.ReactNode;

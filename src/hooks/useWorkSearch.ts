@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { recentWorksData, type RecentWork, type WorkCategory } from '@/types/recentWorks';
+import { type RecentWork, recentWorksData } from '@/types/recentWorks';
+import { useMemo, useState } from 'react';
 
 /**
  * Hook để tìm kiếm works theo text
@@ -15,9 +15,9 @@ export const useWorkSearch = () => {
 
     const term = searchTerm.toLowerCase();
     return recentWorksData.filter((work: RecentWork) =>
-      work.title.toLowerCase().includes(term) ||
-      work.description.toLowerCase().includes(term) ||
-      work.category.toLowerCase().includes(term)
+      work.title.toLowerCase().includes(term)
+      || work.description.toLowerCase().includes(term)
+      || work.category.toLowerCase().includes(term),
     );
   }, [searchTerm]);
 

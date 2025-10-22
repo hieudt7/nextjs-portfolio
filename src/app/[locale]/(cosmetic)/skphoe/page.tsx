@@ -1,6 +1,6 @@
-import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Skphoe from '@/pages/skphoe/Skphoe';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Skphoe');
@@ -14,4 +14,3 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function SkphoePage() {
   return <Skphoe />;
 }
-

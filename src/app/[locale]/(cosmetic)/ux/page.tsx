@@ -1,6 +1,6 @@
-import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Ux from '@/pages/ux/Ux';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Ux');
@@ -14,4 +14,3 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function UxPage() {
   return <Ux />;
 }
-

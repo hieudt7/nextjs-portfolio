@@ -11,7 +11,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 export default (phase: string) => {
-  const isDev = phase === PHASE_DEVELOPMENT_SERVER;
+  const isDevelopment = phase === PHASE_DEVELOPMENT_SERVER;
   return bundleAnalyzer(
     withNextIntl({
       eslint: {
@@ -22,7 +22,7 @@ export default (phase: string) => {
       images: {
         unoptimized: true,
       },
-      assetPrefix: isDev ? undefined : 'https://cdn.mydomain.com',
+      assetPrefix: isDevelopment ? undefined : 'https://cdn.mydomain.com',
     }),
   );
 };

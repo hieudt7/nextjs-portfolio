@@ -1,6 +1,6 @@
-import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Japan from '@/pages/japan/Japan';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Japan');
@@ -14,4 +14,3 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function JapanPage() {
   return <Japan />;
 }
-

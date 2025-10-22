@@ -1,12 +1,11 @@
+/* Import Flaticon CSS - external CSS file */
+@use '~@flaticon/flaticon-uicons/css/regular/rounded';
+
+/* Import home styles - local SCSS file */
+@use './home.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import Flaticon CSS - external CSS file */
-@import '~@flaticon/flaticon-uicons/css/regular/rounded';
-
-/* Import home styles - local SCSS file */
-@import './home.scss';
 
 /* HelveticaNeue Font Family */
 @font-face {

@@ -25,4 +25,3 @@ export default async function Game(props: IGameProps) {
     <GamePage />
   );
 }
-

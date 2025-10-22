@@ -1,6 +1,6 @@
-import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Nutrition from '@/pages/nutrition/Nutrition';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Nutrition');
@@ -14,4 +14,3 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function NutritionPage() {
   return <Nutrition />;
 }
-

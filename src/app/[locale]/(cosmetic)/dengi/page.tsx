@@ -1,6 +1,6 @@
-import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Dengi from '@/pages/dengi/Dengi';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Dengi');
@@ -14,4 +14,3 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function DengiPage() {
   return <Dengi />;
 }
-
