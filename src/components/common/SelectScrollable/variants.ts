@@ -4,6 +4,5 @@ export const selectScrollable = tv({
   slots: {
     wrapper: 'relative',
   },
-  variants: {
-  },
+  variants: {},
 });

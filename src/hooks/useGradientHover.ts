@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 
-interface GradientHoverOptions {
+type GradientHoverOptions = {
   gradientColor?: string;
   activeColor?: string;
-}
+};
 
 /**
  * Hook để tạo hiệu ứng gradient hover slide từ trên xuống dưới
@@ -16,23 +16,25 @@ export const useGradientHover = (options: GradientHoverOptions = {}) => {
 
   const {
     gradientColor = 'linear-gradient(135deg, #8750f7 0%, #2a1454 100%)',
-    activeColor = 'rgba(135, 80, 247, 0.1)'
+    activeColor = 'rgba(135, 80, 247, 0.1)',
   } = options;
 
   useEffect(() => {
     const container = containerRef.current;
     const gradient = gradientRef.current;
 
-    if (!container || !gradient) return;
+    if (!container || !gradient) {
+      return;
+    }
 
     // Function để cập nhật vị trí gradient cho item được chỉ định
     const updateGradientPosition = (item: HTMLElement) => {
       const containerRect = container.getBoundingClientRect();
       const itemRect = item.getBoundingClientRect();
-      
+
       const relativeTop = itemRect.top - containerRect.top;
       const itemHeight = itemRect.height;
-      
+
       gradient.style.opacity = '1';
       gradient.style.visibility = 'visible';
       gradient.style.top = `${relativeTop}px`;
@@ -46,10 +48,10 @@ export const useGradientHover = (options: GradientHoverOptions = {}) => {
       // Xóa active class khỏi tất cả items
       const allItems = container.querySelectorAll('li[data-index]');
       allItems.forEach(item => item.classList.remove('active'));
-      
+
       // Thêm active class vào item được chọn
       activeItem.classList.add('active');
-      
+
       // Cập nhật vị trí gradient
       updateGradientPosition(activeItem);
     };
@@ -60,11 +62,13 @@ export const useGradientHover = (options: GradientHoverOptions = {}) => {
       setActiveItem(firstItem);
     }
 
-    const handleItemMouseEnter = (e: Event) => {
-      const target = e.target as HTMLElement;
+    const handleItemMouseEnter = (event: Event) => {
+      const target = event.target as HTMLElement;
       const item = target.closest('li[data-index]') as HTMLElement;
-      
-      if (!item) return;
+
+      if (!item) {
+        return;
+      }
 
       isActiveRef.current = true;
       setActiveItem(item);
