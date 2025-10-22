@@ -1,6 +1,5 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import createNextIntlPlugin from 'next-intl/plugin';
-import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
 import './src/libs/Env';
 
 const withNextIntl = createNextIntlPlugin('./src/libs/i18n.ts');
@@ -10,8 +9,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 /** @type {import('next').NextConfig} */
-export default (phase: string) => {
-  const isDevelopment = phase === PHASE_DEVELOPMENT_SERVER;
+export default () => {
   return bundleAnalyzer(
     withNextIntl({
       eslint: {
@@ -23,7 +21,6 @@ export default (phase: string) => {
       images: {
         unoptimized: true,
       },
-      assetPrefix: isDevelopment ? undefined : 'https://cdn.mydomain.com',
     }),
   );
 };
