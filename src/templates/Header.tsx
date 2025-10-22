@@ -48,8 +48,8 @@ export default function Header() {
                 />
               </div>
               <div className="logo-email">
-                <a href="mailto:hieudtx9@gmail.com" className="email-link">
-                  hieudtx9@gmail.com
+                <a href="#" className="email-link">
+                  hans@portfolio
                 </a>
               </div>
             </div>

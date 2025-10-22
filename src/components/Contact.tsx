@@ -132,7 +132,7 @@ export default function Contact() {
                 I'm currently available to take on new projects, so feel free to send me a message about anything that you want to run past me. You can contact anytime at 24/7.
               </p>
 
-              <div className="contact-details space-y-4" data-aos="fade-up" data-aos-delay="200">
+              {/* <div className="contact-details space-y-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="tel:+84378063585" className="contact-item">
                   +84 378 063 585
                 </a>
@@ -142,7 +142,7 @@ export default function Contact() {
                 <address className="contact-item not-italic">
                   Cau Dien, Ha Noi, Viet Nam
                 </address>
-              </div>
+              </div> */}
 
               <div className="social-links mt-12">
                 <div className="social-icons flex gap-4">
