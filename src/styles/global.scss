@@ -147,6 +147,14 @@ img {
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  &.white-title {
+    span {
+      background-image: linear-gradient(to right, #fff 0%, #fff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
 }
 .page-description {
   color: #140c1c;

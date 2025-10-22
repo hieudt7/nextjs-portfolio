@@ -1,8 +1,13 @@
+'use client';
+
 import { useGradientHover } from '@/hooks/useGradientHover';
+import { useAOS } from '@/libs/aos';
 import { qualityServicesData } from '@/types/qualityServices';
 import * as React from 'react';
 
 export default function QualityServices() {
+  useAOS();
+
   const { containerRef, gradientRef } = useGradientHover({
     gradientColor: 'linear-gradient(260deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%)',
     activeColor: 'rgba(255, 255, 255, 0.1)',
@@ -13,12 +18,12 @@ export default function QualityServices() {
       <section id="services" className="profile-quality-services" data-id="profile-quality-services">
         <div className="container mx-auto max-w-[1200px] px-4">
           <div className="page-info mx-auto mb-[50px] max-w-[660px]">
-            <h2 className="page-title">
+            <h2 className="page-title" data-aos="fade-up" data-aos-delay="0">
               <span>
                 My Quality Services
               </span>
             </h2>
-            <p className="page-description">
+            <p className="page-description" data-aos="fade-up" data-aos-delay="100">
               We put your ideas and thus your wishes in the form of a unique web project that inspires you and you customers.
             </p>
           </div>
@@ -49,6 +54,8 @@ export default function QualityServices() {
                   key={service.id}
                   className="quality-service-item relative flex cursor-pointer items-center justify-between gap-[20px] border-b border-[#dddddd] p-8 transition-all duration-300 ease-out"
                   data-index={index}
+                  data-aos="fade-right"
+                  data-aos-delay={index * 100}
                   style={{ position: 'relative', zIndex: 2 }}
                 >
                   <span className="number min-w-[60px] shrink-0 text-[20px] font-bold leading-[30px] text-[#8750f7] transition-all duration-300 ease-out">

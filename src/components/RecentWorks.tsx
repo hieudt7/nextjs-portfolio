@@ -24,7 +24,7 @@ export default function RecentWorks() {
 
   return (
     <>
-      <section className="profile-recent-works pb-[90px] pt-[120px]" data-id="profile-recent-works">
+      <section id="recent-works" className="profile-recent-works pb-[90px] pt-[120px]" data-id="profile-recent-works">
         <div className="page-info mx-auto mb-[50px] max-w-[660px]">
           <h2 className="page-title">
             <span>

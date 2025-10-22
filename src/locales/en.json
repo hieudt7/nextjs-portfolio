@@ -79,5 +79,33 @@
   "Game": {
     "meta_title": "Game",
     "meta_description": "Play amazing games and have fun."
+  },
+  "Japan": {
+    "meta_title": "Japan",
+    "meta_description": "Explore Japanese culture and traditions."
+  },
+  "Nutrition": {
+    "meta_title": "Nutrition",
+    "meta_description": "Discover healthy nutrition and wellness tips."
+  },
+  "Future": {
+    "meta_title": "Future",
+    "meta_description": "Explore future trends and innovations."
+  },
+  "Ux": {
+    "meta_title": "UX Design",
+    "meta_description": "Learn about user experience and design principles."
+  },
+  "Skphoe": {
+    "meta_title": "Skphoe",
+    "meta_description": "Explore Skphoe products and services."
+  },
+  "Dengi": {
+    "meta_title": "Dengi",
+    "meta_description": "Discover Dengi solutions and innovations."
+  },
+  "Bombon": {
+    "meta_title": "Bombon",
+    "meta_description": "Explore Bombon sweet treats and delights."
   }
 }

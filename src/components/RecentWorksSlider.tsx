@@ -1,10 +1,11 @@
 'use client';
 
 import { useWorkFilter } from '@/hooks/useWorkFilter';
+import { useAOS } from '@/libs/aos';
 import { workCategories } from '@/types/recentWorks';
 import Image from 'next/image';
 import * as React from 'react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -15,6 +16,8 @@ import 'swiper/css/pagination';
  * RecentWorks component với Swiper slider - 2 items mỗi slide
  */
 export default function RecentWorksSlider() {
+  useAOS();
+
   // Filter functionality
   const {
     activeCategory,
@@ -37,14 +40,14 @@ export default function RecentWorksSlider() {
       <section id="works" className="profile-recent-works pb-[90px] pt-[120px]" data-id="profile-recent-works">
         <div className="container mx-auto max-w-[1200px] px-4">
           <div className="page-info mx-auto mb-[50px] max-w-[660px]">
-            <h2 className="page-title">
+            <h2 className="page-title" data-aos="fade-up" data-aos-delay="0">
               <span>
                 My Recent Works
               </span>
             </h2>
           </div>
 
-          <ul className="filter-list m-auto mb-[45px] flex w-fit">
+          <ul className="filter-list m-auto mb-[45px] flex w-fit" data-aos="fade-up" data-aos-delay="100">
             {workCategories.map(category => (
               <li key={category} className={activeCategory === category ? 'active' : ''}>
                 <button
@@ -66,9 +69,9 @@ export default function RecentWorksSlider() {
           {/* Swiper Slider */}
           {filteredWorks.length > 0
             ? (
-                <div className="mx-auto max-w-[1200px] px-4">
+                <div className="mx-auto max-w-[1200px] px-4" data-aos="fade-up" data-aos-delay="200">
                   <Swiper
-                    modules={[Pagination, Autoplay]}
+                    modules={[Pagination]}
                     spaceBetween={60}
                     slidesPerView={1}
                     pagination={{
@@ -76,10 +79,6 @@ export default function RecentWorksSlider() {
                       clickable: true,
                       bulletClass: 'swiper-pagination-bullet-custom',
                       bulletActiveClass: 'swiper-pagination-bullet-active-custom',
-                    }}
-                    autoplay={{
-                      delay: 5000,
-                      disableOnInteraction: false,
                     }}
                     breakpoints={{
                       768: {

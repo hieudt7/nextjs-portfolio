@@ -1,6 +1,12 @@
+'use client';
+
+import { useAOS } from '@/libs/aos';
+import { BrandFacebook, BrandGithub, BrandLinkedin } from '@mynaui/icons-react';
 import * as React from 'react';
 
 export default function Contact() {
+  useAOS();
+
   const [formData, setFormData] = React.useState({
     firstName: '',
     lastName: '',
@@ -29,7 +35,7 @@ export default function Contact() {
         <div className="contact-container mx-auto max-w-[1200px] px-4">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Left Column - Contact Form */}
-            <div className="contact-form-section">
+            <div className="contact-form-section" data-aos="fade-right" data-aos-delay="0">
               <h2 className="contact-title mb-6 text-4xl font-bold text-white">
                 Let's work together!
               </h2>
@@ -121,36 +127,33 @@ export default function Contact() {
             </div>
 
             {/* Right Column - Contact Information */}
-            <div className="contact-info-section">
+            <div className="contact-info-section" data-aos="fade-left" data-aos-delay="100">
               <p className="contact-intro mb-8 text-lg text-gray-300">
                 I'm currently available to take on new projects, so feel free to send me a message about anything that you want to run past me. You can contact anytime at 24/7.
               </p>
 
-              <div className="contact-details space-y-4">
-                <a href="tel:+011236548096" className="contact-item">
-                  +01 123 654 8096
+              <div className="contact-details space-y-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="tel:+84378063585" className="contact-item">
+                  +84 378 063 585
                 </a>
-                <a href="mailto:gerolddesign@mail.com" className="contact-item">
-                  gerolddesign@mail.com
+                <a href="mailto:hieudtx9@gmail.com" className="contact-item">
+                  hieudtx9@gmail.com
                 </a>
                 <address className="contact-item not-italic">
-                  Warne Park Street Pine, FL 33157, New York
+                  Cau Dien, Ha Noi, Viet Nam
                 </address>
               </div>
 
               <div className="social-links mt-12">
                 <div className="social-icons flex gap-4">
                   <a href="#" className="social-icon" aria-label="Facebook">
-                    <span className="icon">f</span>
+                    <span className="icon"><BrandFacebook /></span>
                   </a>
-                  <a href="#" className="social-icon" aria-label="Instagram">
-                    <span className="icon">📷</span>
-                  </a>
-                  <a href="#" className="social-icon" aria-label="Twitter">
-                    <span className="icon">🐦</span>
+                  <a href="#" className="social-icon" aria-label="Github">
+                    <span className="icon"><BrandGithub /></span>
                   </a>
                   <a href="#" className="social-icon" aria-label="LinkedIn">
-                    <span className="icon">in</span>
+                    <span className="icon"><BrandLinkedin /></span>
                   </a>
                 </div>
               </div>
