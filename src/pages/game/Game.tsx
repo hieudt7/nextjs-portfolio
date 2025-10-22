@@ -1,8 +1,8 @@
 'use client';
 
+import { Rengoku, Shinazugawa, Tomioka } from '@/components/game/components';
+import { characters } from '@/components/game/data';
 import { useEffect, useState } from 'react';
-import { Rengoku, Shinazugawa, Tomioka } from './components';
-import { characters } from './data';
 
 const GamePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
