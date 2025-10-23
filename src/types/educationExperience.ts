@@ -81,7 +81,7 @@ export const pastRolesData: ExperienceItem[] = [
     id: 1,
     position: 'Tech leader',
     company: 'Podium',
-    period: 'January 2025 – Present',
+    period: 'January 2022 – Present',
     description: 'Junior designer role focusing on UI/UX improvements.',
     type: 'past',
   },
