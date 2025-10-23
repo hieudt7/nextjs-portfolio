@@ -27,19 +27,19 @@ export const educationData: EducationItem[] = [
 
 export const experienceData: ExperienceItem[] = [
   {
-    id: 1,
-    position: 'Senior Frontend 3D',
-    company: 'Podium',
+    id: 2,
+    position: 'Senior Front-end Developer',
+    company: 'TechVify',
     period: 'January 2025 – Present',
-    description: 'Leading design initiatives for e-commerce logistics platform.',
+    description: 'Creating innovative digital experiences for creative agency clients.',
     type: 'current',
   },
   {
-    id: 2,
-    position: 'Senior Front-end Developer',
-    company: 'Doctoer Anywhere',
+    id: 1,
+    position: 'Senior Frontend 3D',
+    company: 'Podium',
     period: 'January 2022 – January 2025',
-    description: 'Creating innovative digital experiences for creative agency clients.',
+    description: 'Leading design initiatives for e-commerce logistics platform.',
     type: 'current',
   },
   {
